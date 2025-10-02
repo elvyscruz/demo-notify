@@ -1,0 +1,17 @@
+name: notificacion push
+
+# Evento que dispara el workflow
+on:
+  push:
+    branches:
+      - main   # Puedes cambiar a la rama que quieras monitorear
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send push notification to ntfy
+        run: |
+          curl -d "¡Se hizo push al repositorio!" https://ntfy.sh/devops-itla
+
